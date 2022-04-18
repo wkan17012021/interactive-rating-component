@@ -40,3 +40,7 @@ body {
     background-color: var(--orange);
     color: var(--white);
 }
+
+.submitted-card-wrapper {
+    display: none;
+}
