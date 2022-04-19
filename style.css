@@ -23,11 +23,11 @@ body {
 .inner-wrapper img {
     background-color: rgb(34, 41, 50);
 }
-.inner-wrapper h2 {
+h2  {
     color: var(--white);
 }
 
-.inner-wrapper p {
+.inner-wrapper p, .submitted-card-wrapper p {
     color: var(--lightgrey);
 }
 
@@ -44,3 +44,9 @@ body {
 .submitted-card-wrapper {
     display: none;
 }
+
+.submitted-card-wrapper span {
+    color: var(--orange);
+    background-color: rgb(34, 41, 50);
+}
+
