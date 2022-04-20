@@ -7,3 +7,7 @@ function handleClick () {
     cardWrapper.style.display = "none";
     submittedCardWrapper.style.display = "block";
 }
+
+const one = document.querySelector('.one');
+const test = document.querySelector('.two');
+test.addEventListener('mouseleave', () => one.style.backgroundColor = "white");
