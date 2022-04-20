@@ -31,7 +31,7 @@ h2  {
     color: var(--lightgrey);
 }
 
-.rating-wrapper span {
+.rating-wrapper ol li  {
     color: var(--mediumgrey);
     background-color: rgb(34, 41, 50);
 }
