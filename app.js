@@ -1,33 +1,31 @@
-// variable to store all rating numbers
-const rating = document.querySelectorAll('.rating');
-// console.log(rating); 
-
-// iterate over each rating element and assign an event listerner when clicked, run the function 
-rating.forEach((number) =>
-number.addEventListener("click", handleClick)
-);
+const cardWrapper = document.querySelector(".inner-wrapper");
+const ratings = document.querySelectorAll('.rating');
+const submitBtn = document.querySelector(".submit-btn");
+const theChosenOne = document.querySelector(".choice");
+const submittedCardWrapper = document.querySelector(".submitted-card-wrapper");
 
 /*
-we need to record which rating number was clicked first. Use let variable as this will be constantly reassigned. note that the variable has no starting value, but we dynamically assign it below when lastClicked == this ()
+record which rating number was clicked first. Use let variable as this will be constantly reassigned. Note that the variable has no starting value, but we dynamically assign it below
 */
+
 let firstClicked;
+// iterate over each rating element and assign an event listener to each. When clicked, run the anon function which retrieves the inner text of the element that was clicked. 
+ratings.forEach(item => {
+    item.addEventListener('click', function() {
+        firstClicked = this.innerText;
+        // console.log(firstClicked);
+        this.style.backgroundColor = "orange"; // changes background-color to orange as per active state design, but more than one rating li tag can be turned orange 💩
+    });
+});
 
-function handleClick() {
-    firstClicked = this;
-// console.log(firstClicked);
-this.style.backgroundColor = "orange";
-}
 
-const someDomStuff = `<div><h1>I'm a div- put the rating out of 5 here with template literal dollar and curly brackets</h1></div>`;
 
-const submitBtn = document.querySelector(".submit-btn");
-submitBtn.addEventListener("click", handleSubmit);
-function handleSubmit () {
-    const cardWrapper = document.querySelector(".inner-wrapper");
-    const submittedCardWrapper = document.querySelector(".submitted-card-wrapper");
-    let testelement = document.getElementById('test');
-    console.log(cardWrapper);
-    cardWrapper.style.display = "none";
-    submittedCardWrapper.style.display = "block";
-    submittedCardWrapper.innerHTML += someDomStuff;
-}
+submitBtn.addEventListener('click', function() {
+    if (firstClicked === undefined) {
+    alert("Please assign a rating, then click submit.");
+    } else {
+        theChosenOne.textContent = firstClicked; // add the chosen number to the span tag with class of 'choice'.
+        cardWrapper.style.display = "none";
+        submittedCardWrapper.style.display = "block";
+    }
+});

@@ -18,6 +18,7 @@ body {
 
 .card-wrapper {
     background-color: rgb(30, 35, 43);
+    border-radius: 25px;
 }
 
 .inner-wrapper img {
@@ -50,4 +51,3 @@ h2  {
     background-color: rgb(34, 41, 50);
 }
 
-.two:hover + .one {background: #ccc}
